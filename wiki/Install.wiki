@@ -3,11 +3,11 @@
 
 = Install Linux =
 
-rpm -i smx-<ver>-<rel>.rpm
+rpm -i smx-(ver)-(rel).rpm
 
 RPM will warn you if the requirements aren't there, etc.
 
-If you need to, you can rpmbuild --rebuild from the smx-<ver>-<rel>.src.rpm
+If you need to, you can rpmbuild --rebuild from the smx-(ver)-(rel).src.rpm
 
 = Install Windows =
 
