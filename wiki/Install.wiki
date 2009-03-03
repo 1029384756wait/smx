@@ -32,4 +32,4 @@ However, these all depend on several other files being installed first:
 
 = See Also = 
 
-[How To Configure]
+[Configure How To Configure]
