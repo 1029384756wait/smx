@@ -14,10 +14,12 @@ If you need to, you can rpmbuild --rebuild from the smx-(ver)-(rel).src.rpm
 On Windows, there's currently no installer, so you get a zipped up file 
 with the following:
 
- * smx.exe - executable
- * libsmx.dll - dll file must be in the path
+ * smx.exe - command-line and/or cgi client
+ * libsmx.dll - main dll
  * libmodsmx.dll - dll file for apache 2, use LoadModule to load it
- * libextperl.dll - dll file for perl extension module, use %module() to load it
+ * libextperl.dll - dll file for perl extension, use %module() to load it
+
+Drop them all in the "windows" directory, so they show up in the path, and they can be loaded as libraries.
 
 However, these all depend on several other files being installed first:
 
