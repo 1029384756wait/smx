@@ -7,7 +7,7 @@ Currently, smx comes with a perl program that parses the unix Makefile.am's, and
 
 = Details =
 
- * install the development versions of [MinGW http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=240780], [OpenSSL http://www.openssl.org/related/binaries.html], [Apache http://httpd.apache.org/download.cgi] & [SQLite http://www.sqlite.org/download.html]
+ * install the development versions of [http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=240780 MinGW ], [http://www.openssl.org/related/binaries.html OpenSSL], [http://httpd.apache.org/download.cgi Apache] & [http://www.sqlite.org/download.html SQLite]
 
  * Open up Win32Build.pl in a text editor
 
