@@ -1,0 +1,26 @@
+#summary How to compile on Windows
+#labels Phase-Deploy
+
+= Introduction =
+
+Currently, smx comes with a perl program that parses the unix Makefile.am's, and compiles based on them.   The program is not terribly configurable yet, but I like the idea, and might get it to be some sort of generic system.
+
+= Details =
+
+ * install the development versions of [MinGW http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=240780], [OpenSSL http://www.openssl.org/related/binaries.html], [Apache http://httpd.apache.org/download.cgi] & [SQLite http://www.sqlite.org/download.html]
+
+ * Open up Win32Build.pl in a text editor
+
+ * Change the MinGW, OpenSSL, Apache & SQLite paths to match wherever you installed them
+
+ * To build run 
+
+    perl Win32Build.pl
+
+ * to make a distribution tarball, run 
+
+    perl Win32Build.pl dist
+
+ * to run tests
+
+    perl Win32Build.pl check
