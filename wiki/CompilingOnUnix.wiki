@@ -20,9 +20,9 @@ That being said, I've noticed that when moving to a new system, the typical issu
 
   * the ac_apache.m4 script doesn't take something into account and fails
 
-  * the conigure script needs to be ./autogen.sh 'ed again, since the new system has a newer version of autoconf and has newer m4 scripts that are needed
+  * the configure script needs  to be rebuilt <code>./autogen.sh</code>, since the new system has a newer version of autoconf and has newer m4 scripts that are needed
 
-  * newer verion of g++ complains about some hack that works fine but is now deprecated
+  * newer version of g++ complains about some hack that works fine but is now deprecated
 
   * very old system complains about lib being missing
 
