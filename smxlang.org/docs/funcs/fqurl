@@ -1,0 +1,13 @@
+%set(name,fqurl)
+%set(description,"Construct a fully-qualified url based on a potentially relative url and the document's url.")
+%set(syntax,"%%fqurl\(url\)")
+%set(example,"If the document is at http://smx.lang.org/blue/index.html, then
+
+%%fqurl\(image/x.gif\)
+
+will be  http://smx.lang.org/blue/image/x.gif
+")
+%set(seealso,)
+%set(authorip,69.134.54.59)
+%set(authorlogin,erik)
+%set(author,)
