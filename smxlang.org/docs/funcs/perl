@@ -1,0 +1,26 @@
+%set(name,perl)
+%set(description,"This is an optional extension which allows the execution of arbitrary perl code in SMX.
+
+It can be quite efficient if the correct functions are export'ed as a part of global initialization of the web server.
+
+The perl function \"output\" returns the string to the SMX engine.  Don't use print for this.  We *will* be taking STDOUT and incorporating it ... so don't rely on STDOUT do do anything until that happens.
+
+The perl function \"export\" causes the named function to be exported to SMX.  With an optional second argument the function can be renamed.   This is a way of exposing perl functions in SMX.
+
+Using the %%perl function is many times more efficient than using %%exec.")
+%set(syntax,"%%module\(libextperl.so\)
+
+%%perl\(&lt;perl code here&gt;\)")
+%set(example,"%%module\(libextperl.so\)
+%%perl\(use Digest::MD5; 
+      export\(\"Digest::MD5::md5_hex\",\"md5_hex\"\);
+\)
+%%md5_hex\(1\) equals %%md5\(1\)
+
+--- result ---
+
+c4ca4238a0b923820dcc509a6f75849b equals c4ca4238a0b923820dcc509a6f75849b")
+%set(seealso,module)
+%set(authorip,69.134.54.59)
+%set(authorlogin,erik)
+%set(author,)

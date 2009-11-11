@@ -15,12 +15,12 @@
 	<div id="sideBarNews">
 		<div id="newsHeader">News</div>
 		<div id="sideBarNewsContent">
+			<div class="newsItem">SMX adds %perl module support</div>
+			<div class="readNewsLink">
+			  <a href="news.html?rec=5">Read More</a></div>
 			<div class="newsItem">SMX adds <a href="http://www.sqlite.org">sqlite</a> support.</div>
 			<div class="readNewsLink">
 			  <a href="news.html?rec=4">Read More</a></div>
-			<div class="newsItem">SMX 1.2 release</div>
-			<div class="readNewsLink">
-			  <a href="news.html?rec=5">Read More</a></div>
 		</div>
 	</div>
         <div id="sideBarAds">
