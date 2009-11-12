@@ -14,7 +14,7 @@ Configuring for Apache:
  LoadModule smx_module /usr/lib/libmodsmx.so
  AddHandler smx-parsed .html
  AddHandler smx-parsed .htm
- SMXInit %expand(/your/init/file.htx)
+ SMXInit %expand(%include(/your/init/file.htx))
 </code>
 
 On Windows, the paths are different, but it works the same.
