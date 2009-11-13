@@ -10,22 +10,23 @@
          )
 ,name)
 
-%define(set-cookie,'
+%define(set-cookie,'%trim(
         %set(zone,%gettoken(%header(host),:,0))
         %if(%wcmatch(%zone%,*.*.*)
                 ,%let(zone,%mid(%zone%,%iadd(1,%pos(.,%zone%))))
         )
-        %set(expstr,%if(%expsec%,Expires=%fmtgtime(%iadd(%expsec%,%time%),"Www, DD-Mmm-YYYY HH:MM:SS") GMT;))
-        %gset(cur-cookie,%cur-cookie%;%name%=%url-encode(%value%))
-        %append-header(Set-Cookie,"%name%=%url-encode(%value%); %expstr% Path=/; Domain=%zone%")
-,name,value,expsec)
+        %set(expstr,%if(%expsec%,Expires=%fmtgtime(%iadd(%expsec%,%time%),"www, dd-mmm-yyyy hh:mm:ss") GMT;))
+        %gset(cur-cookie,%name%=%url-encode(%value%);%cur-cookie%)
+        %gset(setcook-%name%,%value%)
+        %append-header(Set-Cookie,"%name%=%url-encode(%value%); %expstr% Path=/; Domain=.%zone%")
+),name,value,expsec)
 
-%define(del-cookie,'
+%define(del-cookie,'%trim(
         %set(zone,%gettoken(%header(host),:,0))
         %if(%wcmatch(%zone%,*.*.*)
                 ,%let(zone,%mid(%zone%,%iadd(1,%pos(.,%zone%))))
         )
-        %rxmatch(;%cur-cookie%,(.*);%name%=[^; ]+(.*),%let(cur-cookie,%subx(1)%subx(2)))
+        %rxmatch(;%cur-cookie%,(.*); *%name%=[^;]+(.*),%let(cur-cookie,%subx(1)%subx(2)))
         %append-header(Set-Cookie,"%name%=; Expires=Thu 01-Jan-1971 12:01:00 GMT; Path=/; Domain=%zone%")
-,name,value,expsec)
+),name)
 
