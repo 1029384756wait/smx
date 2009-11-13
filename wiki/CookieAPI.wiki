@@ -29,7 +29,7 @@ Paste these functions into your global function %module, or put them in a separa
                 ,%let(zone,%mid(%zone%,%iadd(1,%pos(.,%zone%))))
         )
         %set(expstr,%if(%expsec%,Expires=%fmtgtime(%iadd(%expsec%,%time%),"www, dd-mmm-yyyy hh:mm:ss") GMT;))
-        %gset(cur-cookie,%cur-cookie%;%name%=%url-encode(%value%))
+        %gset(cur-cookie,%name%=%url-encode(%value%);%cur-cookie%)
         %gset(setcook-%name%,%value%)
         %append-header(Set-Cookie,"%name%=%url-encode(%value%); %expstr% Path=/; Domain=.%zone%")
         )
@@ -40,8 +40,8 @@ Paste these functions into your global function %module, or put them in a separa
         %if(%wcmatch(%zone%,*.*.*)
                 ,%let(zone,%mid(%zone%,%iadd(1,%pos(.,%zone%))))
         )
-        %rxmatch(;%cur-cookie%,(.*);%name%=[^; ]+(.*),%let(cur-cookie,%subx(1)%subx(2)))
+        %rxmatch(;%cur-cookie%,(.*); *%name%=[^;]+(.*),%let(cur-cookie,%subx(1)%subx(2)))
         %append-header(Set-Cookie,"%name%=; Expires=Thu 01-Jan-1971 12:01:00 GMT; Path=/; Domain=%zone%")
-),name,value,expsec)
+),name)
 
 }}}
