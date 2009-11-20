@@ -4,6 +4,8 @@
 
 2 functions I use so far, and it's all I've needed to use facebook's connect api for single-signon and to get some user details, friend lists, etc.
 
+You'll want to set %fb-appkey% and %fb-secret% a globals to use these.
+
 %fb-connect% returns "true" if the current "facebook connect" session is logged in.   You'll need to implement the xd_receiver thingy, and after that facebook will hand you a buch of third party cookies.  This function validates them.   If %fb-user% is set... you're logged in.
 
 %fb-api(method, params) issues a REST call to facebooks server and computes the signature.  Works great.
