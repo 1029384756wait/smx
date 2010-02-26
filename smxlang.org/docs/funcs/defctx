@@ -1,0 +1,37 @@
+%set(name,defctx)
+%set(description,"%%defctx creates a new context
+
+Use %%defctx to create a namespace or context which contains groups of macros.
+
+The first parameter is the name of the context you want to define, and the second argument is SMX code you want to run. After you define a context \"test\" using %%define\(test,%%set\(x,4\)\) then expanding %%test\(%%x%%\) or would return '4'.
+
+The \"body\" argument can be any SMX code.  Only the function definitions and variable assignments are stored in the context, however.
+
+There is an optional third argument, which is the parent context which you want to \"inherit\" from.  All inheritance is dynamic, so changes to the parent context will affect all children.
+
+
+Be careful with commas when making long macros.  If you want a comma to show up in the 
+body, remember to put the body in quotes : \",\", or curly braces {...}, or to excape your commas: \\,.  Smx tries 
+to figure out what you meant, but these really help.
+
+
+")
+%set(syntax,"%%defctx\(name,'body[,parent]\)
+")
+%set(example,"%%defctx\(person
+    ,%%define\(walk,%%name%% walks.\)
+\)
+
+%%defctx\(bob
+    ,%%set\(name,bob\)
+,person\)
+
+%%bob\(%%walk%%\)
+
+----
+
+bob walks.")
+%set(seealso,define)
+%set(authorip,71.111.198.84)
+%set(authorlogin,erik)
+%set(author,)
