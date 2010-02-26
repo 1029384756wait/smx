@@ -4,8 +4,9 @@
 
 %authenticate%
 
-%gset(save-func,%form(func))
+%gset(save-func,%replace(%form(func),<,_))
 %fset(func,)
+%fset(group,%replace(%form(group,<,_)))
 
 )%expand(%include(%fqppath(/header.htx)))
 
