@@ -1,6 +1,12 @@
 %set(name,filename)
-%set(syntax,%%csv-appendq(pathname[\,val1[\,val2[\,...]]]))
-%set(description,Appends a record to a text file using comma-delimited format with all fields quoted.)
+%set(description,"Expands to the base \(after the / or \\\) of the filename, including extension.")
+%set(syntax,"%%filename\(pathname\)")
+%set(example,"%%filename\(/usr/bin/foo.exe\)
+
+----
+
+foo.exe")
+%set(seealso,filepath)
+%set(authorip,69.134.54.59)
+%set(authorlogin,erik)
 %set(author,)
-%set(example,)
-%set(seealso,)
