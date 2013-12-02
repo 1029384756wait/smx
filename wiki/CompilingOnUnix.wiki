@@ -10,6 +10,11 @@ Currently the configure script will not fail if you don't have apache, openssl, 
 
 ( I think it would be nice if it advertised this in big bold print )
 
+If you're using RedHat/Centos:
+<code>
+   yum install gcc-c++ make unixODBC-devel sqlite3-devel perl-devel openssl-devel httpd-devel 'perl(ExtUtils::Embed)'
+</code>
+
 The system uses automake, and is pretty standard, so usually stuff just works:<code>
    ./configure
    make
